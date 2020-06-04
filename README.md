@@ -13,7 +13,6 @@
 
 
 
-exit
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -57,7 +56,6 @@ exit
 - belongs_to :user
 
 
- <!-- グループ、ユーザー 、メッセージ、画像-->
 
 
 
