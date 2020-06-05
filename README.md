@@ -1,57 +1,40 @@
 ## groups_usersテーブル
-
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :groups
-- belongs_to :users
-- has_many :messages
-
-
-
+- belongs_to :group
+- belongs_to :user
 
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
-|messages_id|integer|null: false, foreign_key: true|
-
-
+|name|string|null: false|
 ### Association
 - has_many :group_users
 - has_many :users, through: :group_users
 - has_many :messages
 
-
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
-|name|text|null: false, foreign_key: true|
+|name|string|null: false|
 |email|text|null: false, foreign_key: true|
 |password|text|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :group_users
 - has_many :groups, through: :group_users
 - has_many :messages
 
-
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|id|integer|null: false, foreign_key: true|
 |body|text||
 |image|string||
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 ### Association
-- belongs_to :group_users
 - belongs_to :group
 - belongs_to :user
 
