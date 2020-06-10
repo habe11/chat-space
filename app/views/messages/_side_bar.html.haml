@@ -1,15 +1,15 @@
 .chat-side
-  .side-header
-    .side-header__box
+  .chat-side__header
+    .chat-side__header__box
       %p.side-header__box__user-name
         masa
-      %ul.side-header__box__menu
-        %li.side-header__box__menu__new-group
-          = icon('far', 'edit', class: "new")
-          = icon('fa', 'cog', class: "gear")
-  .groupes
-    .group
-      %p.group__name
+      %ul.chat-side-header__box__menu
+        %li.chat-side-header__box__menu__new-group
+          = icon('far', 'edit', class: "chat-side-header__box__menu__new-group_button")
+          = icon('fa', 'cog')
+  .chat-side__groupes
+    .chat-side__groupes__group
+      %p.chat-side__groupes__group__name
         techcamp
-      %p.group__message
+      %p.chat-side__groupes__group__message
         まだメッセージがありません
