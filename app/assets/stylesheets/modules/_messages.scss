@@ -4,11 +4,9 @@
 * {
   box-sizing: border-box;
 }
-
 .wrapper{
   display: flex;
 }
-
 .chat-side{
   width: 300px;
   color: #ffffff;
@@ -53,8 +51,6 @@
     }
   }
 }
-
-
 .chat-main{
   width: calc(100vw - 300px);
   &__header{
@@ -87,10 +83,6 @@
       margin-left: 40px;
     }
   }
-
-
-
-
   &__groupes{
     height: calc(100vh - 190px);
     background-color: #fafafa;
@@ -115,7 +107,6 @@
       }
     }
   }
-
   &__footer{
     height: 90px;
     background-color: #d2d2d2;
