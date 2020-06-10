@@ -1,0 +1,28 @@
+.chat-main 
+  .main-header
+    .main-header__box
+      %p.main-header__box__group-name
+        techgroup
+      = link_to "#", class:"main-header__box__edit-button" do
+        .a
+          Edit
+    %ul.main-header__user-name
+      member:
+  .main-groupes
+    .main-groupes__box
+      .main-groupes__box__group
+        .main-groupes__box__group-name
+          masa
+        .main-groupes__box__group-data
+          2019/11/20(Web) 17:43:01
+      .main-groupes__box__content
+        おはよう
+      
+  .main-footer
+    .message-content_form
+      %input{type: "text", placeholder:"type a message", class:"form__text-box"}
+      %label{class: "form__image"}
+        = icon('fas', 'image')
+        %input{type: "file", class: "form__select"}
+        -# ファイル選択ボタン表示
+      %input{type: "submit", value:"Send", placeholder:"type a message", class:"form__submit"}

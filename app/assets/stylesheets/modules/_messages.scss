@@ -1,0 +1,153 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+
+.wrapper{
+  display: flex;
+}
+
+.chat-side{
+  width: 300px;
+  color: #ffffff;
+  .side-header{
+    height: 100px;
+    background-color: #253141;
+    align-items: center;
+    padding: 0px 20px;
+    display: flex;
+    .side-header__box{
+      width: 260px;
+      height: 20px;
+      display: flex;
+      justify-content: space-between;
+        p{
+          font-size: 16px;
+        } 
+        li{
+          display: flex;
+          justify-content: flex-end;
+          width: 60px;
+          list-style: none;
+          .new{
+            margin-right: 5px;
+          }
+        } 
+    }
+  }
+  .groupes{
+    height: calc(100vh - 100px );
+    background-color: #2f3e51;
+    .group__name{
+      padding: 20px 20px 5px 20px;
+      font-size: 15px; 
+    }
+    .group__message{
+      padding: 0px 20px 40px 20px;
+      font-size: 11px;
+    }
+  }
+}
+
+
+.chat-main{
+  width: calc(100vw - 300px);
+  .main-header{
+    height: 100px;
+    background-color: #ffffff;
+    border: solid 1px #eeeeee;
+    .main-header__box{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      // 子要素を縦の中央揃え
+      .main-header__box__group-name{
+        margin: 35px 0px 15px 40px;
+      }
+      .main-header__box__edit-button{
+        // Editボタンについて
+        text-decoration: none;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        width: 72px;
+        height: 40px;
+        padding: 0px 20px;
+        margin: 35px 40px 0px 20px;
+        color: #38aef0;
+        border: 1px solid #38AEF0;
+      }
+    }
+    .main-header__user-name{
+      color: #999999;
+      font-size: 12px;
+      margin-left: 40px;
+    }
+  }
+  .main-groupes{
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+    .main-groupes__box{
+      margin-left: 40px;
+      .main-groupes__box__group{
+        display: flex;
+        .main-groupes__box__group-name{
+          color: #333333;
+          font-size: 16px;
+        }
+        .main-groupes__box__group-data{
+          color: #999999;
+          font-size: 12px;
+          float: right;
+        }
+        .main-groupes__box__content{
+          color: #434a54;
+          font-size: 14px;
+          margin-top: 12px 0px 46px 0px;
+        }
+      }
+    }
+  }
+  .main-footer{
+    height: 90px;
+    background-color: #d2d2d2;
+    // display: flex;
+    // align-items: center;
+    padding: 20px 50px 20px 40px;
+    // フッダーのパッデング
+    .message-content_form{
+      // フォーム(テキスト、画像)
+      display: flex;
+      align-items: center;
+      // 子要素を縦の中央揃え
+      position: relative;
+        .form__text-box{
+          height: 50px;
+          padding: 0px 10px;
+          margin-right:15px;
+          border: none;
+          width: 100%;
+        }
+        .form__image{
+          font-size: 25px;
+          position: absolute;
+          right : 100px;
+          // relativeをを起点として右から25px
+          .form__select{
+          // ファイル選択ボタン表示
+            display: none;
+          }
+        }
+        .form__submit{
+          // ↑ボタン
+          background-color: #38aef0;
+          height: 50px;
+          width: 72px;
+          color: #ffffff;
+          border: none;
+        }
+    }
+  }
+}
