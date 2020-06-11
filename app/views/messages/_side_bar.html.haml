@@ -2,11 +2,13 @@
   .chat-side__header
     .chat-side__header__box
       %p.side-header__box__user-name
-        masa
+        = current_user.name
+        -# 現在のユーザー名を表示
       %ul.chat-side-header__box__menu
         %li.chat-side-header__box__menu__new-group
           = icon('far', 'edit', class: "chat-side-header__box__menu__new-group_button")
-          = icon('fa', 'cog')
+          = link_to edit_user_path(current_user) do
+            = icon('fa', 'cog')
   .chat-side__groupes
     .chat-side__groupes__group
       %p.chat-side__groupes__group__name

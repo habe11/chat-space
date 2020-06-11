@@ -1,0 +1,4 @@
+.Notification
+  - flash.each do |key, value|
+    = content_tag :div, value, class: key
+    -# key(alert,noticeなど種類を決める),value(出力するメッセージを決める)
