@@ -1,0 +1,27 @@
+.chat-main 
+  .chat-main__header
+    .chat-main__header__box
+      %p.chat-main__header__box__group
+        techgroup
+      = link_to "#", class:"chat-main__header__box__group__edit-button" do
+        .a
+          Edit
+    %ul.chat-main__header__user-name
+      member:
+  .chat-main__groupes
+    .chat-main__groupes__box
+      .chat-main__groupes__box__group
+        .chat-main__groupes__box__group__name
+          masa
+        .chat-main__groupes__box__group__data
+          2019/11/20(Web) 17:43:01
+      .chat-main__groupes__box__content
+        おはよう
+      
+  .chat-main__footer
+    .chat-main__footer__form
+      %input{type: "text", placeholder:"type a message", class:"chat-main__footer__form__text-box"}
+      %label{class: "chat-main__footer__form__image"}
+        = icon('fas', 'image')
+        %input{type: "file", class: "chat-main__footer__form__image__select"}
+      %input{type: "submit", value:"Send", placeholder:"type a message", class:"chat-main__footer__form__submit"}
