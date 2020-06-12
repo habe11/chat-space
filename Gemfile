@@ -55,8 +55,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 gem "haml-rails", ">= 1.0", '<= 2.0.1'
-# 最下部に記載
+# 最下部に記載ewxir
 
 gem 'font-awesome-sass'
+
+gem 'pry-rails'
 
 gem 'devise'

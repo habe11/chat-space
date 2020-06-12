@@ -40,6 +40,7 @@
     background-color: #2f3e51;
     padding-left: 20px;
     &__group{
+      text-decoration: none;
       &__name{
         padding: 20px 20px 0px 0px;
         font-size: 15px;
@@ -60,7 +61,7 @@
     &__box{
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: center; 
       &__group{
         margin: 35px 0px 15px 40px;
         &__edit-button{
