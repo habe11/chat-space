@@ -6,12 +6,15 @@
         -# 現在のユーザー名を表示
       %ul.chat-side-header__box__menu
         %li.chat-side-header__box__menu__new-group
-          = icon('far', 'edit', class: "chat-side-header__box__menu__new-group_button")
+          = link_to new_group_path do
+            = icon('far', 'edit')
           = link_to edit_user_path(current_user) do
             = icon('fa', 'cog')
   .chat-side__groupes
-    .chat-side__groupes__group
-      %p.chat-side__groupes__group__name
-        techcamp
-      %p.chat-side__groupes__group__message
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .chat-side__groupes__group
+        = link_to '#' do
+          %p.chat-side__groupes__group__name
+            = group.name
+          %p.chat-side__groupes__group__message
+            まだメッセージがありません
