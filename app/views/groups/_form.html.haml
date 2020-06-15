@@ -1,5 +1,5 @@
 -# 部分テンプレート
-= form_with model: group, local: true do |f|
+= form_with  model: group, local: true do |f|
   - if group.errors.any?
     .SettingGroupForm__errors
       %h2= "#{group.errors.full_messages.count}件のエラーが発生しました。"
