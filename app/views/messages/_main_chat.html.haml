@@ -2,25 +2,35 @@
   .chat-main__header
     .chat-main__header__box
       %p.chat-main__header__box__group
-        techgroup
+        =@group.name
         .chat-main__header__box__group__edit-button
-          Edit
-    %ul.chat-main__header__user-name
-      member:
+          = link_to edit_group_path(@group) do
+            Edit
+            -# GETアクションなのでlinkに引数が必要
+            
+    %ul.chat-main__header__user
+      %li.chat-main__header__user__member
+        member:
+      %li.chat-main__header__user__name
+        -@group.users.each do |user|
+          =user.name
+        -# @groupに紐づくusersの名前を表示。
+        -# 「-」は表示されないrubyの文
+        -# 「=」は表示されるrubyの文
+        -# 基本閉じタグはいらない。
+
+
   .chat-main__groupes
-    .chat-main__groupes__box
-      .chat-main__groupes__box__group
-        .chat-main__groupes__box__group__name
-          masa
-        .chat-main__groupes__box__group__data
-          2019/11/20(Web) 17:43:01
-      .chat-main__groupes__box__content
-        おはよう
-      
+    = render @messages
+    -# = render partial: 'message', collection: @messagesの略である
+    -# 部分テンプレート「_message.html.haml」ファイルに飛ぶ
+    -# 「partial: 'message'」@の内容を自動的に複数形sを省いて判定してくれる
+    
   .chat-main__footer
-    .chat-main__footer__form
-      %input{type: "text", placeholder:"type a message", class:"chat-main__footer__form__text-box"}
-      %label{class: "chat-main__footer__form__image"}
-        = icon('fas', 'image')
-        %input{type: "file", class: "chat-main__footer__form__image__select"}
-      %input{type: "submit", value:"Send", placeholder:"type a message", class:"chat-main__footer__form__submit"}
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+      .chat-main__footer__form
+        = f.text_field :content, class: 'chat-main__footer__form__text-box', placeholder: 'type a message'
+        = f.label :image, class: 'chat-main__footer__form__image' do
+          = icon('fas', 'image')
+          = f.file_field :image, class: 'chat-main__footer__form__image__select'
+      = f.submit 'Send', class: 'chat-main__footer__form__submit'
