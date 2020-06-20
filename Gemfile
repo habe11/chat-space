@@ -69,3 +69,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 gem 'devise'
+
+gem 'jquery-rails'
+# 最後尾に記入する

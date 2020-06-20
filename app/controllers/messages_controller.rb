@@ -14,9 +14,15 @@ class MessagesController < ApplicationController
     # メッセージを追加する機能
     @message = @group.messages.new(message_params)
     if @message.save
-      redirect_to group_messages_path(@group), notice: 'メッセージが送信されました'
-      # もしメッセージが保存できたら
-      # Prefix(group_messages)へメッセージ付きでリンク
+    # ↑もしメッセージが保存できたら
+      respond_to do |format|
+      # フォーマットに応じたレスポンスを作成
+        format.html { redirect_to group_messages_path, notice: "メッセージを送信しました" }
+        # ↑HTMLフォーマット
+        # ↑Prefix(group_messages)へメッセージ付きでリンク
+        format.json
+        # ↑JSONフォーマット
+      end
     else
       # メッセージ保存に失敗した場合
       @messages = @group.messages.includes(:user)
