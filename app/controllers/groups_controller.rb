@@ -21,6 +21,7 @@ class GroupsController < ApplicationController
       render :new
       # アクションなしでnewに飛ぶ
     end
+    # binding.pry
   end
 
   def edit

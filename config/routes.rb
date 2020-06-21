@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'groups#index'
   # root = デフォルトのローカルホストで飛ぶ場所の指定
   # viewフォルダのgroupフォルダのindex.html.hamlファイル
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:edit, :update, :index]
   resources :groups, only: [:new, :create, :edit, :update] do
     resources :messages, only: [:index, :create]
     # groupに紐づくmeseageなのでネストする
