@@ -1,3 +1,5 @@
 .SettingGroupForm
   %h1 新規チャットグループ
   = render partial: 'form', locals: { group: @group }
+  -# 「_form.html.haml」へのrender「@group」の変数つき
+  -# render先では「@group」は「group」の表記。
