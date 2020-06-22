@@ -46,7 +46,7 @@ $(function(){
       // input変数をkeywordカラムに。
     })
     .done(function(users) {
-      console.log(users)
+      // console.log(users)
       $("#UserSearchResult").empty();
       //emptyメソッドで一度検索結果を空にする
       if (users.length !== 0) {
@@ -69,7 +69,7 @@ $(function(){
   })
   $("#UserSearchResult").on("click", ".ChatMember__add", function() {
     // 追加ボタンを押下すると親要素の情報を取得してfunctionを実行
-    console.log("OKです");
+    // console.log("OKです");
     const userName = $(this).attr("data-user-name");
     // ".ChatMember__add"に属する"data-user-name"をuserNameに代入
     const userId = $(this).attr("data-user-id");
