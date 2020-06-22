@@ -104,6 +104,7 @@
   &__groupes{
     height: calc(100vh - 190px);
     background-color: #fafafa;
+    overflow: scroll;
     &__box{
       margin-left: 40px;
       &__group{
